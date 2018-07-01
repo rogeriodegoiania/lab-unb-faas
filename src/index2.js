@@ -4,7 +4,6 @@ const port = 80;
 var processar = require("../lib/processar");
 
 const server = http.createServer(function(req, res) {
-    //resposta = processar(10,11,"ac49a76e49ee1d692d20af85b35b5b357d71c747");
     resposta = processar(10,11,"f47a4df8d00232c3441720c1e912c181fd5ceda6");
     
     res.statusCode = 200;
