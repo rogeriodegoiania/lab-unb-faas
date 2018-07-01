@@ -52,10 +52,12 @@ const processar = function(inicio, fim, textoEmbaralhado){
     return "";
 }
 
+exports.handler = async (event) => {
+    var inicio = 10;
+    var fim = 11;
+    var textoEmbaralhado = "ac49a76e49ee1d692d20af85b35b5b357d71c747";
+    
+    var resposta = processar(inicio,fim,textoEmbaralhado);
 
-//TESTE
-var tempoInicio = new Date().getTime();
-//resposta = processar(10,11,"ac49a76e49ee1d692d20af85b35b5b357d71c747");
-//resposta = processar(10,11,"df51e37c269aa94d38f93e537bf6e2020b21406c");
-resposta = processar(10,11,"70c881d4a26984ddce795f6f71817c9cf4480e79");
-console.log("Processado em " + (new Date().getTime() - tempoInicio) + "ms. Resposta => ", resposta);
+    return resposta;
+};
