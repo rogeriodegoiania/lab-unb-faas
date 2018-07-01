@@ -37,12 +37,10 @@ const processar = function(inicio, fim, textoEmbaralhado){
         for (var i2 = 0; i2 < tabelaCaracteres.length; i2++){
             for (var i3 = 0; i3 < tabelaCaracteres.length; i3++){5
                 for (var i4 = 0; i4 < tabelaCaracteres.length; i4++){
-                    for (var i5 = 0; i5 < tabelaCaracteres.length; i5++){
-                        var textoTentativa = tabelaCaracteres[i1] + tabelaCaracteres[i2] + tabelaCaracteres[i3] + tabelaCaracteres[i4] + tabelaCaracteres[i5];
-                        var textoTentativaEmbaralhado = crypto.createHash("sha1").update(textoTentativa).digest("hex");
-                        if (textoTentativaEmbaralhado === textoEmbaralhado){
-                            return textoTentativa;
-                        }
+                    var textoTentativa = tabelaCaracteres[i1] + tabelaCaracteres[i2] + tabelaCaracteres[i3] + tabelaCaracteres[i4];
+                    var textoTentativaEmbaralhado = crypto.createHash("sha1").update(textoTentativa).digest("hex");
+                    if (textoTentativaEmbaralhado === textoEmbaralhado){
+                        return textoTentativa;
                     }
                 }
             }
@@ -57,5 +55,5 @@ const processar = function(inicio, fim, textoEmbaralhado){
 var tempoInicio = new Date().getTime();
 //resposta = processar(10,11,"ac49a76e49ee1d692d20af85b35b5b357d71c747");
 //resposta = processar(10,11,"df51e37c269aa94d38f93e537bf6e2020b21406c");
-resposta = processar(10,11,"70c881d4a26984ddce795f6f71817c9cf4480e79");
+resposta = processar(10,11,"f47a4df8d00232c3441720c1e912c181fd5ceda6");
 console.log("Processado em " + (new Date().getTime() - tempoInicio) + "ms. Resposta => ", resposta);
